@@ -14,8 +14,8 @@ class TestViewController: UIViewController, QRScannerDelegate {
         return self.view
     }
     
-    func drawBoundingSquares(codeStringValue: String) -> (label: String?, labelPosition: SquareLabelPositions, color: CGColor?) {
-        return ("Valid", .Bottom, UIColor.cyan.cgColor)
+    func drawBoundingSquares(codeStringValue: String) -> (label: String?, labelPosition: SquareLabelPositions, labelColor: UIColor?, color: CGColor?) {
+        return ("Valid", .Bottom,  UIColor.white, UIColor.cyan.cgColor)
     }
     
     func getCodeStringValue(_ codeStringValue: String) {

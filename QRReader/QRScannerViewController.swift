@@ -12,7 +12,7 @@ protocol QRScannerDelegate: class {
     /*To set the preview view of the code scanner*/
     func setPreviewView() -> UIView
     /*To draw bounding squa res*/
-    func drawBoundingSquares(codeStringValue: String) -> (label: String?, labelPosition: SquareLabelPositions, color: CGColor?)
+    func drawBoundingSquares(codeStringValue: String) -> (label: String?, labelPosition: SquareLabelPositions, labelColor: UIColor?, color: CGColor?)
 }
 
 // MARK: ~ SquareLabelPositions Enum
@@ -29,6 +29,7 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     var squareView = UIView()
     var squareLabel: String?
     var squareLabelPosition: SquareLabelPositions = .Top
+    var squareLabelColor: UIColor?
     var squareColor: CGColor?
     
     // Define delegate variable.
@@ -107,11 +108,12 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         squareView.layer.borderWidth = 2
         squareView.frame = barCodeObject.bounds
         // Get square properties.
-        (squareLabel, squareLabelPosition, squareColor) = (delegate?.drawBoundingSquares(codeStringValue: code.stringValue))!
+        (squareLabel, squareLabelPosition, squareLabelColor, squareColor) = (delegate?.drawBoundingSquares(codeStringValue: code.stringValue))!
         // Set up the square label if there is.
         if squareLabel != "" {
             let label = UILabel()
             label.text = squareLabel
+            label.textColor = squareLabelColor ?? UIColor.black
             previewView.addSubview(label)
             // Set up the label position.
             switch squareLabelPosition {
