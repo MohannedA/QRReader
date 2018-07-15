@@ -11,7 +11,7 @@
 		040FB68520F748D200D3A435 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FB68420F748D200D3A435 /* TestViewController.swift */; };
 		CD7051B400C23C7176111FC5 /* Pods_QRReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A150FF239B1C8E301A6D66B /* Pods_QRReader.framework */; };
 		DE6095FE1F1CEA5F000E1A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6095FD1F1CEA5F000E1A63 /* AppDelegate.swift */; };
-		DE6096001F1CEA5F000E1A63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6095FF1F1CEA5F000E1A63 /* ViewController.swift */; };
+		DE6096001F1CEA5F000E1A63 /* ViewControllerPlusQRReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6095FF1F1CEA5F000E1A63 /* ViewControllerPlusQRReader.swift */; };
 		DE6096031F1CEA5F000E1A63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6096011F1CEA5F000E1A63 /* Main.storyboard */; };
 		DE6096051F1CEA5F000E1A63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE6096041F1CEA5F000E1A63 /* Assets.xcassets */; };
 		DE6096081F1CEA5F000E1A63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6096061F1CEA5F000E1A63 /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		4A150FF239B1C8E301A6D66B /* Pods_QRReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6095FA1F1CEA5F000E1A63 /* QRReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE6095FD1F1CEA5F000E1A63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE6095FF1F1CEA5F000E1A63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE6095FF1F1CEA5F000E1A63 /* ViewControllerPlusQRReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPlusQRReader.swift; sourceTree = "<group>"; };
 		DE6096021F1CEA5F000E1A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE6096041F1CEA5F000E1A63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE6096071F1CEA5F000E1A63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				DE6095FD1F1CEA5F000E1A63 /* AppDelegate.swift */,
-				DE6095FF1F1CEA5F000E1A63 /* ViewController.swift */,
+				DE6095FF1F1CEA5F000E1A63 /* ViewControllerPlusQRReader.swift */,
 				DE6096011F1CEA5F000E1A63 /* Main.storyboard */,
 				DE6096041F1CEA5F000E1A63 /* Assets.xcassets */,
 				DE6096061F1CEA5F000E1A63 /* LaunchScreen.storyboard */,
@@ -209,7 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040FB68320F7443600D3A435 /* QRScannerViewController.swift in Sources */,
-				DE6096001F1CEA5F000E1A63 /* ViewController.swift in Sources */,
+				DE6096001F1CEA5F000E1A63 /* ViewControllerPlusQRReader.swift in Sources */,
 				040FB68520F748D200D3A435 /* TestViewController.swift in Sources */,
 				DE6095FE1F1CEA5F000E1A63 /* AppDelegate.swift in Sources */,
 			);
