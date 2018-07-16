@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040FB68320F7443600D3A435 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FB68220F7443600D3A435 /* QRScannerViewController.swift */; };
+		040F251520FC93A300A0247C /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040F251420FC93A300A0247C /* QRScannerViewController.swift */; };
+		040FB68320F7443600D3A435 /* QRScannerViewControllerS3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FB68220F7443600D3A435 /* QRScannerViewControllerS3.swift */; };
 		040FB68520F748D200D3A435 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040FB68420F748D200D3A435 /* TestViewController.swift */; };
 		CD7051B400C23C7176111FC5 /* Pods_QRReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A150FF239B1C8E301A6D66B /* Pods_QRReader.framework */; };
 		DE6095FE1F1CEA5F000E1A63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6095FD1F1CEA5F000E1A63 /* AppDelegate.swift */; };
@@ -18,7 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		040FB68220F7443600D3A435 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		040F251420FC93A300A0247C /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		040FB68220F7443600D3A435 /* QRScannerViewControllerS3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewControllerS3.swift; sourceTree = "<group>"; };
 		040FB68420F748D200D3A435 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		13C850975F08EB08EBF670FF /* Pods-QRReader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRReader.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRReader/Pods-QRReader.release.xcconfig"; sourceTree = "<group>"; };
 		4A150FF239B1C8E301A6D66B /* Pods_QRReader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRReader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,8 +82,9 @@
 				DE6096041F1CEA5F000E1A63 /* Assets.xcassets */,
 				DE6096061F1CEA5F000E1A63 /* LaunchScreen.storyboard */,
 				DE6096091F1CEA5F000E1A63 /* Info.plist */,
-				040FB68220F7443600D3A435 /* QRScannerViewController.swift */,
+				040FB68220F7443600D3A435 /* QRScannerViewControllerS3.swift */,
 				040FB68420F748D200D3A435 /* TestViewController.swift */,
+				040F251420FC93A300A0247C /* QRScannerViewController.swift */,
 			);
 			path = QRReader;
 			sourceTree = "<group>";
@@ -208,7 +211,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040FB68320F7443600D3A435 /* QRScannerViewController.swift in Sources */,
+				040F251520FC93A300A0247C /* QRScannerViewController.swift in Sources */,
+				040FB68320F7443600D3A435 /* QRScannerViewControllerS3.swift in Sources */,
 				DE6096001F1CEA5F000E1A63 /* ViewControllerPlusQRReader.swift in Sources */,
 				040FB68520F748D200D3A435 /* TestViewController.swift in Sources */,
 				DE6095FE1F1CEA5F000E1A63 /* AppDelegate.swift in Sources */,
@@ -337,11 +341,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 86K78YBMR9;
 				INFOPLIST_FILE = QRReader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QCR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -352,11 +357,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 86K78YBMR9;
 				INFOPLIST_FILE = QRReader/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.QCR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

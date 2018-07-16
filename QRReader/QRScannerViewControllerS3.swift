@@ -1,12 +1,13 @@
 /*
- QRScannerViewController
+ QRScannerViewControllerS3
  */
+/*
 import AVFoundation
 import UIKit
 import SnapKit
 
 // MARK: ~ QRScannerDelegate
-protocol QRScannerDelegate: class {
+protocol QRScannerDelegateS3: class {
     /*To get the string code value*/
     func getCodeStringValue(_ codeStringValue: String)
     /*To set the preview view of the code scanner*/
@@ -16,28 +17,15 @@ protocol QRScannerDelegate: class {
 }
 
 // MARK: ~ SquareLabelPositions Enum
-enum SquareLabelPositions: String {
+enum SquareLabelPositionsS3: String {
     case Top, Center, Bottom
 }
 
 
-open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+open class QRScannerViewControllerS3: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     // MARK: ~ Variables
     var video = AVCaptureVideoPreviewLayer()
     var previewView = UIView()
-    private let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
-                                      AVMetadataObject.ObjectType.code39,
-                                      AVMetadataObject.ObjectType.code39Mod43,
-                                      AVMetadataObject.ObjectType.code93,
-                                      AVMetadataObject.ObjectType.code128,
-                                      AVMetadataObject.ObjectType.ean8,
-                                      AVMetadataObject.ObjectType.ean13,
-                                      AVMetadataObject.ObjectType.aztec,
-                                      AVMetadataObject.ObjectType.pdf417,
-                                      AVMetadataObject.ObjectType.itf14,
-                                      AVMetadataObject.ObjectType.dataMatrix,
-                                      AVMetadataObject.ObjectType.interleaved2of5,
-                                      AVMetadataObject.ObjectType.qr]
     // Define square view variables.
     var squareView = UIView()
     var squareLabel: String?
@@ -46,7 +34,7 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     var squareColor: CGColor?
     
     // Define delegate variable.
-    weak var delegate: QRScannerDelegate?
+    weak var delegate: QRScannerDelegateS3?
     
     // MARK: ~ Life Cycle
     open override func viewDidLoad() {
@@ -54,14 +42,8 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         // Create session.
         let session = AVCaptureSession()
         
-        // Get the back-facing camera for capturing videos.
-        let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
-        
         // Define capture devcie.
-        guard let captureDevice = deviceDiscoverySession.devices.first else {
-            print("Failed to get the camera device")
-            return
-        }
+        let captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         
         // Set up the input of the QR scanner.
         do
@@ -78,14 +60,12 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         let output = AVCaptureMetadataOutput()
         session.addOutput(output)
         output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = supportedCodeTypes
+        output.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
         
         // Add the set session to the preview layer.
         video = AVCaptureVideoPreviewLayer(session: session)
         // Set the preview view.
         previewView = (delegate?.setPreviewView())!
-        // Set the size of the video.
-        video.videoGravity = AVLayerVideoGravity.resizeAspectFill
         // Make the video(preview view) size = the main view size.
         video.frame = previewView.layer.bounds
         // Add the created viedo(preview view) to the main view.
@@ -96,18 +76,18 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
     }
     
     // MARK: ~ QR Scanner Methods
-    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    open func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         cleanScreen(superView: self.previewView) // Clear from the old bounding squares.
         // If there is a code.
-        if metadataObjects.count != 0
+        if metadataObjects != nil && metadataObjects.count != 0
         {
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
             {
                 // If the detected code is QR code.
-                if supportedCodeTypes.contains(object.type)
+                if object.type == AVMetadataObjectTypeQRCode
                 {
                     // Use the code stringValue.
-                    delegate?.getCodeStringValue(object.stringValue!)
+                    delegate?.getCodeStringValue(object.stringValue)
                     let barCodeObject = self.video.transformedMetadataObject(for: object)
                     setSquareView(code: object, barCodeObject: barCodeObject!) // The code bounding square.
                 }
@@ -129,7 +109,7 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         squareView.layer.borderWidth = 2
         squareView.frame = barCodeObject.bounds
         // Get square properties.
-        (squareLabel, squareLabelPosition, squareLabelColor, squareColor) = (delegate?.drawBoundingSquares(codeStringValue: code.stringValue!))!
+        (squareLabel, squareLabelPosition, squareLabelColor, squareColor) = (delegate?.drawBoundingSquares(codeStringValue: code.stringValue))!
         // Set up the square label if there is.
         if squareLabel != "" {
             let label = UILabel()
@@ -162,3 +142,4 @@ open class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObj
         previewView.bringSubview(toFront: squareView)
     }
 }
+*/

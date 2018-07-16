@@ -22,8 +22,6 @@ class TestViewController: UIViewController, QRScannerDelegate {
         print(codeStringValue)
     }
     
-    
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
